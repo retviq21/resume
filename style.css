@@ -72,8 +72,6 @@ html{
     border-radius: 50%;
 }
 
-
-
 /* ABOUT ME SECTION */
 
 .about-me{
@@ -114,11 +112,12 @@ html{
 }
 
 .about-me .line{
+    padding: 30px 0px;
     display: flex;
 }
 
 .about-me .line .col{
-    width: 50%;
+    text-align: center;
 }
 
 .about-me .line .col .col-title{
@@ -130,6 +129,7 @@ html{
 
 .about-me .line .col .details{
     list-style: none;
+    padding: 10px 0px;
 }
 
 .about-me .line .col .details li{
@@ -137,19 +137,25 @@ html{
     margin: 12px 0;
 }
 
-.about-me .line .col .details li strong{
+.about-me .line .col .title-info{
     display: inline-block;
     font-weight: var(--weight-500);
     color: var(--light-blue);
     width: 130px;
 }
 
-.about-me .line .col .content-hobbies{
-    display: flex;
-    flex-wrap: wrap;
+.about-me .col-hobbies{
+    padding: 20px 20px;
+    text-align: center;
 }
 
-.about-me .line .col .content-hobbies .hobbies-items{
+.about-me .col-hobbies .content-hobbies{
+    display: flex;
+    justify-content: center;
+    padding: 20px 20px;
+}
+
+.about-me .col-hobbies .content-hobbies .hobbies-items{
     width: 100px;
     height: 100px;
     background-color: var(--light-gray);
@@ -162,53 +168,17 @@ html{
     transition: .3s;
 }
 
-.about-me .line .col .content-hobbies .hobbies-items:hover{
+.about-me .col-hobbies .content-hobbies .hobbies-items:hover{
     background-color: var(--light-blue);
 }
 
-.about-me .line .col .content-hobbies .hobbies-items i{
+.about-me .col-hobbies .content-hobbies .hobbies-items i{
     font-size: 30px;
     margin-bottom: 10px;
 }
 
-.about-me .line .col .content-hobbies .hobbies-items span{
+.about-me .col-hobbies .content-hobbies .hobbies-items span{
     font-weight: var(--weight-300);
-}
-
-.about-me .download-button{
-    font-family: 'Poppins', sans-serif;
-    font-weight: var(--weight-500);
-    cursor: pointer;
-    background-color: transparent;
-    border: 2px solid var(--white);
-    width: fit-content;
-    display: block;
-    margin: 20px auto;
-    padding: 10px 22px;
-    font-size: 16px;
-    color: var(--white);
-    position: relative;
-    z-index: 10;
-}
-
-.about-me .download-button .overlay{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 0;
-    height: 100%;
-    background-color: var(--light-blue);
-    z-index: -1;
-    transition: 1s;
-}
-
-.about-me .download-button:hover .overlay{
-    width: 100%;
-}
-
-.about-me .download-button .download{
-    font-family: 'Poppins', sans-serif;
-    color: var(--white);
 }
 
 /* SKILLS SECTION */
@@ -268,154 +238,11 @@ html{
     margin-bottom: 25px;
 }
 
-/* .skills .skill .bar-skill{
-    height: 8px;
-    width: 80%;
-    background-color: var(--black);
-    position: relative;
-    margin-bottom: 30px;
-}
-
-.skills .skill .progress{
-    background-color: var(--light-blue);
-    color: var(--black);
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 8px;
-}
-
-.skills .skill .bar-skill span{
-    position: absolute;
-    height: 40px;
-    width: 40px;
-    background-color: var(--light-blue);
-    border-radius: 50px;
-    line-height: 40px;
-    text-align: center;
-    top: -17px;
-    right: -15px;
-    font-size: 14px;
-}
-
-.skills .skill .html{
-    width: 0%;
-    animation: 2s html forwards;
-}
-
-@keyframes html{
-    0%{width: 0%;}
-    100%{width: 80%;}
-}
-
-.skills .skill .css{
-    width: 0%;
-    animation: 2s css forwards;
-}
-
-@keyframes css{
-    0%{width: 0%;}
-    100%{width: 80%;}
-}
-
-.skills .skill .javascript{
-    width: 0%;
-    animation: 2s javascript forwards;
-}
-
-@keyframes javascript{
-    0%{width: 0%;}
-    100%{width: 80%;}
-}
-
-.skills .skill .scss{
-    width: 0%;
-    animation: 2s scss forwards;
-}
-
-@keyframes scss{
-    0%{width: 0%;}
-    100%{width: 70%;}
-}
-
-.skills .skill .react{
-    width: 0%;
-    animation: 2s react forwards;
-}
-
-@keyframes react{
-    0%{width: 0%;}
-    100%{width: 70%;}
-}
-
-.skills .skill .bootstrap{
-    width: 0%;
-    animation: 2s bootstrap forwards;
-}
-
-@keyframes bootstrap{
-    0%{width: 0%;}
-    100%{width: 70%;}
-}
-
-.skills .skill .java{
-    width: 0%;
-    animation: 2s java forwards;
-}
-
-@keyframes java{
-    0%{width: 0%;}
-    100%{width: 60%;}
-}
-
-.skills .skill .python{
-    width: 0%;
-    animation: 2s python forwards;
-}
-
-@keyframes python{
-    0%{width: 0%;}
-    100%{width: 60%;}
-}
-
-.skills .skill .mysql{
-    width: 0%;
-    animation: 2s mysql forwards;
-}
-
-@keyframes mysql{
-    0%{width: 0%;}
-    100%{width: 50%;}
-}
-
-.skills .skill .mongodb{
-    width: 0%;
-    animation: 2s mongodb forwards;
-}
-
-@keyframes mongodb{
-    0%{width: 0%;}
-    100%{width: 40%;}
-}
-
-.skills .skill .english{
-    width: 0%;
-    animation: 2s english forwards;
-}
-
-@keyframes english{
-    0%{width: 0%;}
-    100%{width: 65%;}
-} */
-
-/* OTHERS SECTION */
-
-.others{
-    background-color: var(--light-gray);
+.skills .content-others{
     padding: 50px 20px;
 }
 
-.others .content-others .others-title{
+.skills .content-others .others-title{
     font-family: 'Poppins', sans-serif;
     font-weight: var(--weight-500);
     color: var(--white);
@@ -423,12 +250,12 @@ html{
     font-size: 28px;
 }
 
-.others .content-others{
+.skills .content-others{
     max-width: 1100px;
     margin: auto;
 }
 
-.others .content-others .others-items{
+.skills .content-others .others-items{
     display: flex;
     margin-bottom: 10px;
     color: var(--white);
@@ -439,8 +266,6 @@ html{
     align-items: center;
     padding: 15px;
 }
-
-/*-----------------*/
 
 /* RESUME SECTION */
 
@@ -565,6 +390,42 @@ html{
     margin: 20px;
 }
 
+.content-section .download-button{
+    font-family: 'Poppins', sans-serif;
+    font-weight: var(--weight-500);
+    cursor: pointer;
+    background-color: transparent;
+    border: 2px solid var(--white);
+    width: fit-content;
+    display: block;
+    margin: 20px auto;
+    padding: 10px 22px;
+    font-size: 16px;
+    color: var(--white);
+    position: relative;
+    z-index: 10;
+}
+
+.content-section .download-button .overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: var(--light-blue);
+    z-index: -1;
+    transition: 1s;
+}
+
+.content-section .download-button:hover .overlay{
+    width: 100%;
+}
+
+.content-section .download-button .download{
+    font-family: 'Poppins', sans-serif;
+    color: var(--white);
+}
+
 /* FOOTER */
 
 .footer{
@@ -628,35 +489,19 @@ html{
 
 /* RESPONSIVE SECTION */
 
-@media screen and (max-width:980px) {
-    nav{
-        display: none;
-    }
-    .nav-responsive{
-        display: block;
-    }
-    nav.responsive{
-        display: block;
-        position: absolute;
-        right: 0;
-        top: 70px;
-        background-color: var(--dark-gray);
-        width: 180px;
-    }
-    nav.responsive ul{
-        display: block !important;
-    }
-    nav.responsive ul li{
-        padding: 10px 0;
-    }
-}
 
-@media screen and (max-width:700px){
+@media screen and (max-width:780px){
     .about-me .line{
         display: block;
     }
     .about-me .line .col{
-        width: fit-content;
+        display: block;
+    }
+    .about-me .col-hobbies .content-hobbies{
+        display: inline-block;
+    }
+    .about-me .col-hobbies{
+        display: block;
     }
     .skills .line{
         display: block;
@@ -682,10 +527,7 @@ html{
     .resume .line .right-item{
         margin-left: 20px;
     }
-    .contact .line{
+    .footer .social-webs{
         display: block;
-    }
-    .contact .line .col{
-        width: 100%;
     }
 }
