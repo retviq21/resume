@@ -242,6 +242,11 @@ html{
     padding: 50px 20px;
 }
 
+.skills .content-others .others-items{
+    font-size: 20px;
+    list-style: none;
+}
+
 .skills .content-others .others-title{
     font-family: 'Poppins', sans-serif;
     font-weight: var(--weight-500);
@@ -260,7 +265,6 @@ html{
     margin-bottom: 10px;
     color: var(--white);
     font-weight: var(--weight-300);
-    max-width: 1100px;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -512,11 +516,8 @@ html{
     .skills .line .col .bar-skill{
         width: 100%;
     }
-    .others .content-others .others-items{
+    .skills .content-others .others-items{
         display: block;
-    }
-    .others .content-others .row{
-        width: fit-content;
     }
     .resume .line{
         display: block;
