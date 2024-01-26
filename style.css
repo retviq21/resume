@@ -8,6 +8,7 @@
     --green: #1cb698;
     --light-gray: #4f4f4f;
     --black: #252a2e;
+    --bootstrap-blue: #0d6efd;
 
 /* TYPOGRAPHY */
 
@@ -121,6 +122,61 @@ html{
     font-weight: var(--weight-300);
 }
 
+/* ------------------------------ */
+
+.col .copy_button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    border: none;
+    background-color: transparent;
+    margin-left: 47%;
+    outline: none;
+}
+
+.copy_button::after {
+    content: 'copy';
+    width: fit-content;
+    height: fit-content;
+    position: absolute;
+    font-size: 15px;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    opacity: 0;
+    visibility: hidden;
+    transition: .2s linear;
+    top: 115%;
+}
+
+.icon {
+    width: 30px;
+    height: 30px;
+    transition: .2s linear;
+}
+
+.icon path {
+    fill: var(--white);
+    transition: .2s linear;
+}
+
+.copy_button:hover > .icon {
+    transform: scale(1.2);
+}
+
+.copy_button:hover > .icon path {
+    fill: var(--light-blue);
+}
+
+.copy_button:hover::after {
+    visibility: visible;
+    opacity: 1;
+    top: 105%;
+}
+
+/* ------------------------------ */
+
 .about-me .line .col .title-info{
     display: inline-block;
     font-weight: var(--weight-500);
@@ -226,6 +282,14 @@ html{
     padding: 50px 20px;
 }
 
+.skills .content-others .others-title{
+    font-family: 'Poppins', sans-serif;
+    font-weight: var(--weight-500);
+    color: var(--white);
+    margin-bottom: 25px;
+    font-size: 28px;
+}
+
 .skills .content-others .others-items{
     font-size: 20px;
     list-style: none;
@@ -251,8 +315,106 @@ html{
     font-weight: var(--weight-300);
     justify-content: space-evenly;
     align-items: center;
-    padding: 15px;
+    padding: 15px;  
 }
+
+/* ------------------------------------------------- */
+
+/* .item {
+    position: relative;
+    padding: 10px 22px;
+    border-radius: 6px;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    background-color: #7d2ae8;
+    transition: all 0.2s ease;
+}
+
+.item:active {
+    transform: scale(0.96);
+}
+
+.item:before,
+.item:after {
+    position: absolute;
+    content: "";
+    width: 150%;
+    left: 50%;
+    height: 100%;
+    transform: translateX(-50%);
+    z-index: -1000;
+    background-repeat: no-repeat;
+}
+
+.item:hover:before {
+    top: -70%;
+    background-image: radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+    radial-gradient(circle, transparent 20%, #7d2ae8 20%, transparent 30%),
+    radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+    radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+    radial-gradient(circle, transparent 10%, #7d2ae8 15%, transparent 20%),
+    radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+    radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+    radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+    radial-gradient(circle, #7d2ae8 20%, transparent 20%);
+    background-size: 10% 10%, 20% 20%, 15% 15%, 20% 20%, 18% 18%, 10% 10%, 15% 15%,
+    10% 10%, 18% 18%;
+    background-position: 50% 120%;
+    animation: greenTopBubbles 0.6s ease;
+}
+
+@keyframes greenTopBubbles {
+    0% {
+    background-position: 5% 90%, 10% 90%, 10% 90%, 15% 90%, 25% 90%, 25% 90%,
+        40% 90%, 55% 90%, 70% 90%;
+    }
+
+    50% {
+    background-position: 0% 80%, 0% 20%, 10% 40%, 20% 0%, 30% 30%, 22% 50%,
+        50% 50%, 65% 20%, 90% 30%;
+    }
+
+    100% {
+    background-position: 0% 70%, 0% 10%, 10% 30%, 20% -10%, 30% 20%, 22% 40%,
+        50% 40%, 65% 10%, 90% 20%;
+    background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+    }
+}
+
+.item:hover::after {
+    bottom: -70%;
+    background-image: radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+    radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+    radial-gradient(circle, transparent 10%, #7d2ae8 15%, transparent 20%),
+    radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+    radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+    radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+    radial-gradient(circle, #7d2ae8 20%, transparent 20%);
+    background-size: 15% 15%, 20% 20%, 18% 18%, 20% 20%, 15% 15%, 20% 20%, 18% 18%;
+    background-position: 50% 0%;
+    animation: greenBottomBubbles 0.6s ease;
+}
+
+@keyframes greenBottomBubbles {
+    0% {
+    background-position: 10% -10%, 30% 10%, 55% -10%, 70% -10%, 85% -10%,
+        70% -10%, 70% 0%;
+    }
+
+    50% {
+    background-position: 0% 80%, 20% 80%, 45% 60%, 60% 100%, 75% 70%, 95% 60%,
+        105% 0%;
+    }
+
+    100% {
+    background-position: 0% 90%, 20% 90%, 45% 70%, 60% 110%, 75% 80%, 95% 70%,
+        110% 10%;
+    background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+    }
+} */
+
+/* ------------------------------------------------- */
 
 /* RESUME SECTION */
 
@@ -380,39 +542,35 @@ html{
 }
 
 .content-section .download-button{
-    font-family: 'Poppins', sans-serif;
-    font-weight: var(--weight-500);
-    cursor: pointer;
-    background-color: transparent;
-    border: 2px solid var(--white);
-    width: fit-content;
     display: block;
-    margin: 20px auto;
     padding: 10px 22px;
+    margin: 20px auto;
+    border: 2px solid var(--white);
     font-size: 16px;
     color: var(--white);
-    position: relative;
-    z-index: 10;
+    border-radius: 7px;
+    font-weight: 700;
+    transition: 0.5s;
+    transition-property: box-shadow;
 }
 
-.content-section .download-button .overlay{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 0;
-    height: 100%;
-    background-color: var(--light-blue);
-    z-index: -1;
-    transition: 1s;
+.content-section .download-button{
+    background: var(--light-blue);
+    box-shadow: 0 0 25px var(0,140,255);
+    border: none;
 }
 
-.content-section .download-button:hover .overlay{
-    width: 100%;
+.download-button:hover{
+    box-shadow: 0 0 5px rgb(0,140,255),
+                0 0 20px rgb(0,140,255),
+                0 0 40px rgb(0,140,255),
+                0 0 80px rgb(0,140,255);
 }
 
 .content-section .download-button .download{
     font-family: 'Poppins', sans-serif;
     color: var(--white);
+    font-weight: var(--weight-500);
 }
 
 /* FOOTER */
@@ -517,6 +675,12 @@ html{
     }
     .footer .social-webs{
         display: block;
+    }
+    .col{
+        margin-top: 50px;
+    }
+    .content-section .download-button{
+        margin-top: 55px;
     }
 }
 
